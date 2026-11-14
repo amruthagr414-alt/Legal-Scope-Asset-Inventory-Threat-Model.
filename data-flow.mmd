@@ -1,0 +1,10 @@
+flowchart TD
+    U[Student / Test User] -->|HTTP request to localhost| B[Local Web Browser]
+    B -->|Local application request| W[OWASP Juice Shop]
+    W -->|Read / write lab records| D[(Local Lab Data Store)]
+    W -->|Write activity events| L[Application Logs]
+    A[Lab Administrator] -->|Authorized administration| W
+    H[Student Laptop / Host] --- B
+    H --- W
+    H --- D
+    H --- L
